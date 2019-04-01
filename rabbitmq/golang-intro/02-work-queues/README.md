@@ -1,10 +1,8 @@
-RabbitMQ Practices
-==================
+Work Queues
+===========
 `AuthorBy: zhe`     
 `CreateAt: 20190329`        
 `ModifyAt: 20190401`  
-
-# 工作队列
 
 > 实现一个用来在多个 Workers 之间分发 `耗时任务` 的工作队列
 
@@ -237,3 +235,14 @@ failOnError(err, "Failed to set QoS")
 
 [#1]:https://www.rabbitmq.com/confirms.html
 [#2]:https://www.rabbitmq.com/confirms.html
+
+- [Work Queues (using the Go RabbitMQ client)](https://www.rabbitmq.com/tutorials/tutorial-two-go.html)
+
+# Content
+
+- [01-hello world](../01-hello-world)
+- [02-work-queues](../02-work-queues)
+- [TODO][03-publish/subscribe](../03-publish-subscribe)
+- [TODO][04-routing](../04-routing)
+- [TODO][05-topics](../05-topics)
+- [TODO][06-rpc](../06-rpc)
