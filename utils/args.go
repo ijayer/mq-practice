@@ -25,3 +25,15 @@ func BodyFrom(args []string) string {
 	}
 	return s
 }
+
+// SeverityForm 从命令行输入获取日志级别
+func SeverityForm(args []string) string {
+	var s string
+	var l = len(args)
+	if l < 2 || os.Args[1] == "" {
+		s = "info"
+	} else {
+		s = os.Args[1]
+	}
+	return s
+}

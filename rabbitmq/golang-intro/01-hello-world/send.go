@@ -12,13 +12,13 @@ import (
 	"log"
 	"time"
 
+	"github.com/ijayer/mq-practice/utils"
 	"github.com/streadway/amqp"
-	"github.com/zhezh09/mq-practice/utils"
 )
 
 func main() {
 	// rabbitmq server addr
-	url := flag.String("url", "amqp://guest:guest@10.0.0.69:5672/", "rabbitmq server address")
+	url := flag.String("url", "amqp://guest:guest@127.0.0.1:5672/", "rabbitmq server address")
 	flag.Parse()
 
 	// 连接到 RabbitMQ 服务器，即：建立 Socket 连接，处理
@@ -66,7 +66,7 @@ func main() {
 		time.Sleep(10 * time.Millisecond)
 	}
 
-	// 2019/03/29 10:43:48 connecting to [amqp://guest:guest@10.0.0.69:5672/]
+	// 2019/03/29 10:43:48 connecting to [amqp://guest:guest@127.0.0.1:5672/]
 	// 2019/03/29 10:43:48 connected
 	// 2019/03/29 10:43:48  [x] Sent Hello
 }

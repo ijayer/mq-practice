@@ -1,4 +1,4 @@
-module github.com/zhezh09/mq-practice
+module github.com/ijayer/mq-practice
 
 go 1.12
 
