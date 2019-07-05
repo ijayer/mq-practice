@@ -8,7 +8,6 @@
 package main
 
 import (
-	"flag"
 	"log"
 	"os"
 
@@ -17,13 +16,9 @@ import (
 )
 
 func main() {
-	// rabbitmq server addr
-	url := flag.String("url", "amqp://guest:guest@127.0.0.1:5672/", "rabbitmq server address")
-	flag.Parse()
-
-	log.Printf("connecting to rabbitmq[%v]\n", *url)
+	log.Printf("connecting to rabbitmq[%v]\n", utils.Host)
 	// dial with rabbitmq
-	conn, err := amqp.Dial(*url)
+	conn, err := amqp.Dial(utils.Host)
 	utils.FatalOnError(err, "failed to connect to rabbitmq")
 	log.Printf("connected")
 

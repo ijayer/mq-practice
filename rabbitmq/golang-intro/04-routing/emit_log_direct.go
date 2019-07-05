@@ -8,7 +8,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -18,14 +17,10 @@ import (
 )
 
 func main() {
-	// rabbitmq server addr
-	url := flag.String("url", "amqp://guest:guest@127.0.0.1:5672/", "rabbitmq server address")
-	flag.Parse()
-
-	log.Printf("connecting to rabbitmq[%v]\n", *url)
+	log.Printf("connecting to rabbitmq[%v]\n", utils.Host)
 	// dial with rabbitmq
-	conn, err := amqp.Dial(*url)
-	utils.FatalOnError(err, fmt.Sprintf("failed to dial with rabbitmq[%v]", *url))
+	conn, err := amqp.Dial(utils.Host)
+	utils.FatalOnError(err, fmt.Sprintf("failed to dial with rabbitmq[%v]", utils.Host))
 	defer conn.Close()
 	log.Printf("connected")
 
@@ -45,7 +40,7 @@ func main() {
 	// publish msg
 	err = ch.Publish(
 		xName,
-		utils.SeverityForm(os.Args),
+		utils.SeverityFrom(os.Args),
 		false,
 		false,
 		amqp.Publishing{

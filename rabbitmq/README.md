@@ -174,10 +174,10 @@ prior to calling Channel.Publish or Channel.Consume.
 
 - [01-hello world](golang-intro/01-hello-world)
 - [02-work-queues](golang-intro/02-work-queues)
-- [TODO][03-publish/subscribe](golang-intro/03-publish-subscribe)
-- [TODO][04-routing](golang-intro/04-routing)
-- [TODO][05-topics](golang-intro/05-topics)
-- [TODO][06-rpc](golang-intro/06-rpc)
+- [03-publish/subscribe](golang-intro/03-publish-subscribe)
+- [04-routing](golang-intro/04-routing)
+- [05-topics](golang-intro/05-topics)
+- [06-rpc](golang-intro/06-rpc)
 
 [#1]:https://godoc.org/github.com/streadway/amqp
 [#2]:https://www.rabbitmq.com/getstarted.html

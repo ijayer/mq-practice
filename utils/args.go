@@ -8,9 +8,23 @@
 package utils
 
 import (
+	"flag"
 	"os"
 	"strings"
 )
+
+// rabbitmq server addr
+var Host string
+
+func init() {
+	flag.StringVar(&Host, "url", "amqp://guest:guest@192.168.0.104:5672/", "rabbitmq server address")
+	flag.Parse()
+}
+
+type Parser interface {
+	BodyFrom([]string) string
+	SeverityFrom([]string) string
+}
 
 // BodyFrom 获取命令行参数
 func BodyFrom(args []string) string {
@@ -26,8 +40,8 @@ func BodyFrom(args []string) string {
 	return s
 }
 
-// SeverityForm 从命令行输入获取日志级别
-func SeverityForm(args []string) string {
+// SeverityFrom 从命令行输入获取日志级别
+func SeverityFrom(args []string) string {
 	var s string
 	var l = len(args)
 	if l < 2 || os.Args[1] == "" {
