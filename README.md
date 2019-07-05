@@ -2,7 +2,7 @@ Message Queue Practices
 ========================
 `AuthorBy: zhe`     
 `CreateAt: 20190328`        
-`ModifyAt: 20190401`  
+`ModifyAt: 20190706`  
 
 <!-- 摘要 -->
 
@@ -37,9 +37,13 @@ Message Queue Practices
 
     给日志系统添加新特性：只订阅一部分消息
 
-- [TODO][05-topics](rabbitmq/golang-intro/05-topics)
+- [05-topics](rabbitmq/golang-intro/05-topics)
 
-- [TODO][06-rpc](rabbitmq/golang-intro/06-rpc)
+    路由规则支持模糊匹配的 Exchange 类型：topic
+
+- [06-rpc](rabbitmq/golang-intro/06-rpc)
+
+    基于 MQ 构建 RPC 系统
 
 # [TODO][Kafaka](./kafaka)
 
